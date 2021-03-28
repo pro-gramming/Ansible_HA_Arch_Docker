@@ -7,11 +7,16 @@ services:
       context: master
     networks:
       - net
-  worker:
-    container_name: worker_node
+  worker1:
+    container_name: worker_node_1
     image: ansible_worker
     build:
       context: worker_node
+    networks:
+      - net
+  worker2:
+    container_name: worker_node_2
+    image: ansible_worker
     networks:
       - net
 networks:
