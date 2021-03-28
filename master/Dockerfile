@@ -13,4 +13,4 @@ WORKDIR "/root/ansible/"
 
 COPY inventory remote_key ansible.cfg /root/ansible/
 
-CMD ["tail", "-f", "dev/null"]
+CMD ["tail", "-f", "/dev/null"]
