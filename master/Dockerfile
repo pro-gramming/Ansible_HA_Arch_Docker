@@ -11,7 +11,7 @@ RUN yum install -y openssh-clients.x86_64
 
 # installing sshpass for ansible
 RUN yum install -y epel-release && \
-    yum install sshpass
+    yum install sshpass -y
 
 WORKDIR "/root/ansible/"
 
