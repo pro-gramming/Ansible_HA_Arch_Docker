@@ -9,6 +9,10 @@ RUN yum update -y && \
 #installing openssh-client
 RUN yum install -y openssh-clients.x86_64
 
+# installing sshpass for ansible
+RUN yum install -y epel-release && \
+    yum install sshpass
+
 WORKDIR "/root/ansible/"
 
 COPY inventory remote_key ansible.cfg /root/ansible/
