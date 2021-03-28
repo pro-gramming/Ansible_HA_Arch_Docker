@@ -1,0 +1,18 @@
+version: '3.3'
+services: 
+  master:
+    container_name: master
+    image: ansible_master
+    build:
+      context: master
+    networks:
+      - net
+  worker:
+    container_name: worker_node
+    image: ansible_worker
+    build:
+      context: worker_node
+    networks:
+      - net
+networks:
+  net:

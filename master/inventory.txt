@@ -1,0 +1,1 @@
+worker ansible_host=172.17.0.3 ansible_ssh_private_key_file=/root/ansible/remote_key ansible_user=remote_user
