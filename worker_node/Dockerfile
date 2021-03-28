@@ -6,6 +6,9 @@ RUN useradd remote_user && \
     echo "1234" | passwd remote_user --stdin && \
     mkdir /home/remote_user/.ssh && \ 
     chmod 700 /home/remote_user/.ssh
+    
+RUN yum install -y sudo && \ 
+    usermod -aG wheel remote_user
 
 COPY remote_key.pub /home/remote_user/.ssh/authorized_keys
 
