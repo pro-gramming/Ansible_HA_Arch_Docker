@@ -1,2 +1,6 @@
+[all:vars]
+ansible_become_password=1234
+
+[test]
 worker1 ansible_host=worker1 ansible_ssh_pass=1234 ansible_user=remote_user
 worker2 ansible_host=worker2 ansible_ssh_pass=1234 ansible_user=remote_user
