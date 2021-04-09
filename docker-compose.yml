@@ -5,6 +5,8 @@ services:
     image: ansible_master
     build:
       context: master
+    volumes:
+      - m_play_dir:/root/ansible/playbooksDir
     networks:
       - net
   worker1:
