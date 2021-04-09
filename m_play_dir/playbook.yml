@@ -1,4 +1,4 @@
-- hosts: worker
+- hosts: test
   tasks:
 
     - file: 
