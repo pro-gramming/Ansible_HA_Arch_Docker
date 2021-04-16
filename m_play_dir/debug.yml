@@ -1,0 +1,7 @@
+- name: Test Play1
+  become: yes 
+  hosts: all 
+  tasks:
+  - name: Display msg
+    debug: 
+      msg: "Hello from {{ ansible_host }}"
