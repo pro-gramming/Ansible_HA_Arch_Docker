@@ -15,6 +15,10 @@ RUN yum install -y epel-release && \
 
 WORKDIR "/root/ansible/"
 
-COPY inventory remote_key ansible.cfg /root/ansible/
+COPY inventory remote_key /root/ansible/
+
+COPY ansible.cfg /etc/ansible/ansible.cfg
+
+WORKDIR "/root/ansible/playbooksDir"
 
 CMD ["tail", "-f", "/dev/null"]
