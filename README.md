@@ -16,8 +16,9 @@ hostname - worker2
 Running the script: ./ansible_script.sh
 
 # Note:
+This setup is only meant for light-weight testing for modules that don't require systemd in particular.
+
 You need to manually run the docker-compose down after finishing the task.
+This facility will also be provided after a bit of time.
 
-That facility will also be provided after a bit of time.
-
-Thanks! Have a nice day.
+Thanks! Have fun with playbooks :D .
