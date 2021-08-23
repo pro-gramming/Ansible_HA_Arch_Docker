@@ -1,13 +1,41 @@
-- name: Installing and starting Apache
+- name: Play1
   hosts: all
   become: yes
   tasks:
-  - name: Installing httpd package
-    yum:
-      name: httpd
-      state: present
-  
-  - name: starting httpd service
-    service:
-      name: httpd
-      state: started
+    - name: Installing the httpd
+      package:
+        name: httpd
+        state: present
+
+    - name: Starting the service
+      service:
+        name: httpd
+        state: started
+        enabled: true
+
+    - name: Creating a file
+      file:
+        path: /var/www/html/index.html
+        state: touch
+
+    - name: Adding a line to file
+      copy:
+        dest: /var/www/html/index.html
+        content: |
+          This is a {{ inventory_hostname }} sample file, created using Ansible!
+
+    - name: Adding more content at the top
+      lineinfile:
+        path: /var/www/html/index.html
+        insertbefore: BOF
+        line: "Welcome to Nautilus Group!"
+        state: present
+        owner: "apache"
+        group: "apache"
+        mode: "0644"
+
+    - name: Starting the service
+      service:
+        name: httpd
+        state: restarted
+
