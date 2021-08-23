@@ -14,11 +14,10 @@ hostname - worker2
 
 # Run script
 Running the script: ./ansible_script.sh
+#### This will take you to ansible-controller node's playbooks directory where you have some sample playbooks.
 
-# Note:
-This setup is only meant for light-weight testing for modules that don't require systemd in particular.
 
+# Note: 
 You need to manually run the docker-compose down after finishing the task.
-This facility will also be provided after a bit of time.
 
 Thanks! Have fun with playbooks :D .
