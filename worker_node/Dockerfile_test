@@ -21,4 +21,6 @@ EXPOSE 22
 
 RUN rm -rf /run/nologin
 
-CMD /usr/sbin/sshd -D
+RUN systemctl enable sshd
+
+CMD /usr/sbin/init
