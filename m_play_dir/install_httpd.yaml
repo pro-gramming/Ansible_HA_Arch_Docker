@@ -1,0 +1,13 @@
+- name: Installing and starting Apache
+  hosts: all
+  become: yes
+  tasks:
+  - name: Installing httpd package
+    yum:
+      name: httpd
+      state: present
+  
+  - name: starting httpd service
+    service:
+      name: httpd
+      state: started
