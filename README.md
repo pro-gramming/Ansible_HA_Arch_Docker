@@ -20,4 +20,7 @@ Running the script: ./ansible_script.sh
 # Note: 
 You need to manually run the docker-compose down after finishing the task.
 
+## Warning!!!!!
+This setup run the worker nodes as privileged containers, hence it is highly advisable to use this for self-testing needs only.
+
 Thanks! Have fun with playbooks :D .
