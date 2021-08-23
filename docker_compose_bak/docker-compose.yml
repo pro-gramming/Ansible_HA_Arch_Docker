@@ -15,13 +15,19 @@ services:
     build:
       context: ./worker_node
       dockerfile: Dockerfile_test
-    privileged: true
+    volumes:
+      - /sys/fs/cgroup/:/sys/fs/cgroup:ro
+    cap_add:
+      - SYS_ADMIN
     networks:
       - net
   worker2:
     container_name: worker_node_2
     image: sshd_basic
-    privileged: true
+    volumes:
+      - /sys/fs/cgroup/:/sys/fs/cgroup:ro
+    cap_add:
+      - SYS_ADMIN
     networks:
       - net
 networks:
