@@ -24,6 +24,6 @@ Below are the ssh details for the worker nodes:
 > This will take you to ansible-controller node's playbooks directory where you have some sample playbooks.
 
 ### Note:
-> You need to manually run the docker-compose down after you are finished experimenting.
+> You need to manually run the **docker-compose down** after you are finished experimenting.
 
 Thanks! Have fun with playbooks :D .
