@@ -1,26 +1,29 @@
-# ansible_testing_env
-For learning Ansible concepts.
+# For Learning Ansible:
 
-## Dependencies:
-Docker, Docker-compose
+**Pre-requitsites**
+ - [ ] Install sysbox container runtime (to take benefit of system containers)
+ - [ ] Docker 
+ - [ ] Docker-compose
 
-# For worker1
-user - remote_user
-hostname - worker1
+## Architecture Layout: 
 
-# For worker2
-user - remote_user
-hostname - worker2
+ 1. One Master node.
+    > There are some sample playbooks you could use to ease the process and test if workers nodes are up and running.
+ 2. Two worker nodes.
 
-# Run script
-Running the script: ./ansible_script.sh
-#### This will take you to ansible-controller node's playbooks directory where you have some sample playbooks.
+Below are the ssh details for the worker nodes: 
+#### For worker1
+`user - remote_user, hostname - worker1`
 
+#### For worker2
+`user - remote_user, hostname - worker2`
 
-# Note: 
-You need to manually run the docker-compose down after finishing the task.
+## Script
+`./ansible_script.sh`
 
-## Warning!!!!!
-This setup run the worker nodes as privileged containers, hence it is highly advisable to use this for self-testing needs only.
+> This will take you to ansible-controller node's playbooks directory where you have some sample playbooks.
+
+### Note:
+> You need to manually run the docker-compose down after you are finished experimenting.
 
 Thanks! Have fun with playbooks :D .
