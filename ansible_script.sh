@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#creating the images
+# Build Docker images based on the specifications in the docker-compose.yml file.
 docker-compose build
 
-# starting the containers
+# Start Docker containers in detached mode (-d).
 docker-compose up -d
 
-# Now attaching to the master node
+# Attach to the interactive terminal of the "master" container.
 docker exec -it master bash

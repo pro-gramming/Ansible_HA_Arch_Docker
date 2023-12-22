@@ -1,7 +1,7 @@
 # For Learning Ansible:
 
 **Pre-requitsites**
- - [ ] Install sysbox container runtime (to take benefit of system containers)
+ - [ ] Install Sysbox Container Runtime (to take benefit of system containers)
  - [ ] Docker 
  - [ ] Docker-compose
 
