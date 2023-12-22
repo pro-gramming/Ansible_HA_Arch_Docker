@@ -1,24 +1,25 @@
-FROM centos
+FROM quay.io/centos/centos:stream
 
+# Update the package repository and install necessary dependencies
 RUN yum update -y && \
-    yum install -y python3 && \
-    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
-    python3 get-pip.py && \
-    pip install ansible --upgrade
+    yum install -y epel-release && \
+    yum install -y python3 python3-pip openssh-server openssh-clients sshpass yum-utils procps && \
+    yum clean all
 
-#installing openssh-client
-RUN yum install -y openssh-clients.x86_64
+# Install Ansible using pip
+RUN pip3 install --upgrade pip && \
+    pip3 install ansible
 
-# installing sshpass for ansible
-RUN yum install -y epel-release && \
-    yum install sshpass -y
+# Set the working directory
+WORKDIR /root/ansible/
 
-WORKDIR "/root/ansible/"
-
+# Copy files to the container
 COPY inventory remote_key /root/ansible/
-
 COPY ansible.cfg /etc/ansible/ansible.cfg
 
-WORKDIR "/root/ansible/playbooksDir"
+# Set the working directory for playbooks
+WORKDIR /root/ansible/playbooksDir
 
-CMD ["tail", "-f", "/dev/null"]
+RUN systemctl enable sshd
+
+ENTRYPOINT [ "/sbin/init", "--log-level=err" ]
