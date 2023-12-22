@@ -2,6 +2,7 @@ version: '3.3'
 services: 
   master:
     container_name: master
+    hostname: master
     image: ansible_master
     build:
       context: master
@@ -11,6 +12,7 @@ services:
       - net
   worker1:
     container_name: worker_node_1
+    hostname: worker1
     image: sshd_basic
     build:
       context: ./worker_node
@@ -19,6 +21,7 @@ services:
       - net
   worker2:
     container_name: worker_node_2
+    hostname: worker2
     image: sshd_basic
     networks:
       - net

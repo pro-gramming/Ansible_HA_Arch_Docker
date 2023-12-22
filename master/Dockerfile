@@ -3,7 +3,7 @@ FROM quay.io/centos/centos:stream
 # Update the package repository and install necessary dependencies
 RUN yum update -y && \
     yum install -y epel-release && \
-    yum install -y python3 python3-pip openssh-server openssh-clients sshpass yum-utils procps && \
+    yum install -y python3.8 python38-pip openssh-server openssh-clients sshpass yum-utils procps && \
     yum clean all
 
 # Install Ansible using pip

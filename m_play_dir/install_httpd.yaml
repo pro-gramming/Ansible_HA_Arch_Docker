@@ -22,17 +22,7 @@
       copy:
         dest: /var/www/html/index.html
         content: |
-          This is a {{ inventory_hostname }} sample file, created using Ansible!
-
-    - name: Adding more content at the top
-      lineinfile:
-        path: /var/www/html/index.html
-        insertbefore: BOF
-        line: "Welcome to Nautilus Group!"
-        state: present
-        owner: "apache"
-        group: "apache"
-        mode: "0644"
+          Testing Ansible on {{ inventory_hostname }}
 
     - name: Starting the service
       service:
